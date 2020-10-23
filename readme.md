@@ -24,3 +24,7 @@ Also it contains some samples in `examples.py` which can be used as `python star
 ![alt gosperGliderGun](doc/gosperGliderGun.png)
 
 A full description of the CLI can be found in the `doc/CLI.md`.
+
+#### License
+
+This code is available with the MIT License. See LICENSE file for details.
