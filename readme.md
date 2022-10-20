@@ -1,6 +1,7 @@
 ## Conway's Game of Life - Simulator
 [![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
 [![License: MIT](https://img.shields.io/github/license/polynoman/Game-of-Life-Simulator)](https://choosealicense.com/licenses/mit/)
+[![CodeFactor](https://www.codefactor.io/repository/github/polynoman/game-of-life-simulator/badge)](https://www.codefactor.io/repository/github/polynoman/game-of-life-simulator)
 
 A description on the Game of Life can be found on [Wikipedia](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
 
