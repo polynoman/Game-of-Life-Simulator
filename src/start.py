@@ -6,6 +6,7 @@
 
  '''
 
+
 import sys
 import game, examples, randomGenerator
 
@@ -43,12 +44,10 @@ if __name__ == "__main__":
                 i+=1
                 inputString = args[i]
                 if len(inputString) == dimX * dimY:
-                    rows = list()
+                    rows = []
                     stringIndex = 0
-                    for ii in range(dimY):
-                        columns = list()
-                        for iii in range(dimX):
-                            columns.append(inputString[stringIndex])
+                    for _ in range(dimY):
+                        columns = [inputString[stringIndex] for _ in range(dimX)]
                         rows.append(columns)
                     matrix = rows
                 else:
@@ -66,7 +65,7 @@ if __name__ == "__main__":
             except:
                 print("The intervall value is incorrect.")
 
-        elif args[i] == "-S" or args[i] == "--seed":
+        elif args[i] in ["-S", "--seed"]:
             try:
                 i+=1
                 seed = args[i]
@@ -102,25 +101,24 @@ if __name__ == "__main__":
         i+=1
 
 
-    if example != None:
-        if example == "blinker":
-            matrix = examples.blinker
-        elif example == "block":
-            matrix = examples.block
-        elif example == "blinker2":
-            matrix = examples.blinker2
-        elif example == "empty":
-            matrix = examples.empty
-        elif example == "dead":
-            matrix = examples.dead
-        elif example == "gosperGliderGun":
-            matrix = examples.gosperGliderGun
-        elif example == "big":
-            matrix = examples.big
-        elif example == "big2":
-            matrix = examples.big2
+    if example == "big":
+        matrix = examples.big
+    elif example == "big2":
+        matrix = examples.big2
+    elif example == "blinker":
+        matrix = examples.blinker
+    elif example == "blinker2":
+        matrix = examples.blinker2
+    elif example == "block":
+        matrix = examples.block
+    elif example == "dead":
+        matrix = examples.dead
+    elif example == "empty":
+        matrix = examples.empty
+    elif example == "gosperGliderGun":
+        matrix = examples.gosperGliderGun
     # Use randomGenerator if no matrix has been specified
-    if matrix == None:
+    if matrix is None:
         rg = randomGenerator.randomGenerator(seed=seed, threshold=threshold, fieldX=dimX, fieldY=dimY)
         matrix = rg.generateMatrix()
 

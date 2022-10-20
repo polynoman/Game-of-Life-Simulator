@@ -32,19 +32,19 @@ class gameOfLife:
         for i in range(len(self.gameMatrix)):
             for ii in range(len(self.gameMatrix[i])):
                 if self.gameMatrix[i][ii]:
-                    output += " " + self.elementCharacter
+                    output += f" {self.elementCharacter}"
                 else:
-                    output += " " + self.voidCharacter
+                    output += f" {self.voidCharacter}"
             output += self.lineBreakCharacter
-        for i in range(space):
+        for _ in range(space):
             output += ("\n")
         print(output)
 
 
     def doStep(self):
         matrixCopy = copy.deepcopy(self.gameMatrix)
-        for i in range(0,len(self.gameMatrix)):
-            for ii in range(0,len(self.gameMatrix[i])):
+        for i in range(len(self.gameMatrix)):
+            for ii in range(len(self.gameMatrix[i])):
                 neighbors = 0
                 for xoffset in range(-1,2):
                     for yoffset in range(-1,2):
