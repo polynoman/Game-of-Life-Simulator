@@ -10,6 +10,6 @@ from randomGenerator import randomGenerator
 
 def test_randomGenerator():
     solution_maxtrix = [[1, 1, 0, 1], [0, 1, 0, 1], [0, 1, 1, 1], [1, 1, 0, 1]]
-    rg = randomGenerator(seed=123, threshold=0.35, fieldX=4, fieldY=4);
-    matrix = rg.generateMatrix();
+    rg = randomGenerator(seed=123, threshold=0.35, fieldX=4, fieldY=4)
+    matrix = rg.generateMatrix()
     assert DeepDiff(solution_maxtrix, matrix) == {}
