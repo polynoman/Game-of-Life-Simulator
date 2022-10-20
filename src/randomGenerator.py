@@ -12,7 +12,7 @@ import random
 
 class randomGenerator:
 
-    def __init__(self, seed=None, threshold=0.35, fieldX=50,  fieldY=50):
+    def __init__(self, seed=None, threshold=0.35, fieldX=50, fieldY=50):
         self.seed = seed
         self.threshold = threshold
         self.fieldX = fieldX
