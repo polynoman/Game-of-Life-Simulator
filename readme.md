@@ -1,13 +1,16 @@
 ## Conway's Game of Life - Simulator
-[![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
-[![License: MIT](https://img.shields.io/github/license/polynoman/Game-of-Life-Simulator)](https://choosealicense.com/licenses/mit/)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/polynoman/Game-of-Life-Simulator/Python%20application)
+![Codecov](https://img.shields.io/codecov/c/github/polynoman/Game-of-Life-Simulator)
 [![CodeFactor](https://www.codefactor.io/repository/github/polynoman/game-of-life-simulator/badge)](https://www.codefactor.io/repository/github/polynoman/game-of-life-simulator)
+[![License: MIT](https://img.shields.io/github/license/polynoman/Game-of-Life-Simulator)](https://choosealicense.com/licenses/mit/)
+[![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
+
 
 A description on the Game of Life can be found on [Wikipedia](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
 
 #### Setup
 
-This Code has been written in Python 3.5 and does not need any additional libraries.
+This Code has been written in Python 3.10 and does not need any additional libraries.
 
 
 
