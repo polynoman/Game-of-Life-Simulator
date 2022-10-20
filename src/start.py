@@ -36,7 +36,7 @@ if __name__ == "__main__":
                 dimX = int(args[i])
                 i+=1
                 dimY = int(args[i])
-            except:
+            except Exception:
                 print("Input dimensions not right.")
 
         elif args[i] == "-s":
@@ -54,7 +54,7 @@ if __name__ == "__main__":
                     print("Dimensions do not match for input String.")
                     sys.exit()
 
-            except:
+            except Exception:
                 print("Either input dimensions or the input string is incorrect.")
 
         elif args[i] == "-i":
@@ -62,40 +62,40 @@ if __name__ == "__main__":
                 i+=1
                 intervall = float(args[i])
 
-            except:
+            except Exception:
                 print("The intervall value is incorrect.")
 
         elif args[i] in ["-S", "--seed"]:
             try:
                 i+=1
                 seed = args[i]
-            except:
+            except Exception:
                 print("The seed value is incorrect or no seed specified.")
 
         elif args[i] == "-tr":
             try:
                 i+=1
                 threshold = float(args[i])
-            except:
+            except Exception:
                 print("The threshold value is incorrect or no seed specified.")
 
         elif args[i] == "-e":
             try:
                 i+=1
                 example = args[i]
-            except:
+            except Exception:
                 print("The example is incorrect or no example specified.")
 
         elif args[i] == "-cli":
             try:
                 gui = False
-            except:
+            except Exception:
                 print("The example is incorrect or no example specified.")
 
         elif args[i] == "-trace":
             try:
                 trace = True
-            except:
+            except Exception:
                 print("The example is incorrect or no example specified.")
 
         i+=1
