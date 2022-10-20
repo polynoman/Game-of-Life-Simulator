@@ -23,20 +23,14 @@ class randomGenerator:
 
 
     def generateMatrix(self):
-        matrix = list()
-        for ii in range(self.fieldY):
-            a = list()
-            for i in range(self.fieldX):
-                a.append(0)
+        matrix = []
+        for _ in range(self.fieldY):
+            a = [0 for _ in range(self.fieldX)]
             matrix.append(a)
 
-        for i in range(0,len(matrix)):
-            for ii in range(0,len(matrix[i])):
-                if random.random() < self.threshold:
-                    matrix[i][ii] = 1
-                else:
-                    matrix[i][ii] = 0
-
+        for item in matrix:
+            for ii in range(len(item)):
+                item[ii] = 1 if random.random() < self.threshold else 0
         return matrix
 
 

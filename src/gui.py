@@ -41,8 +41,8 @@ class App(tk.Tk):
 
 
     def redraw(self, delay):
-        for i in range(0,len(self.matrix)):
-            for ii in range(0,len(self.matrix[i])):
+        for i in range(len(self.matrix)):
+            for ii in range(len(self.matrix[i])):
                 item_id = self.rect[i,ii]
                 if self.matrix[i][ii] == 1:
                     self.canvas.itemconfig(item_id, fill="#22282A", outline='#22282A')
@@ -54,19 +54,21 @@ class App(tk.Tk):
 
 
     def traceDraw(self, delay):
-        for i in range(0,len(self.matrix)):
-            for ii in range(0,len(self.matrix[i])):
+        for i in range(len(self.matrix)):
+            for ii in range(len(self.matrix[i])):
                 item_id = self.rect[i,ii]
                 if self.matrix[i][ii] == 1:
-                    if self.canvas.itemcget(item_id, "fill") == "white" or self.canvas.itemcget(item_id, "fill") == "#9a280a":
+                    if self.canvas.itemcget(item_id, "fill") in [
+                        "white",
+                        "#9a280a",
+                    ]:
                         self.canvas.itemconfig(item_id, fill="#167826", outline='#167826')
                     else:
                         self.canvas.itemconfig(item_id, fill="#22282A", outline='#22282A')
+                elif self.canvas.itemcget(item_id, "fill") == "#22282A":
+                    self.canvas.itemconfig(item_id, fill="#9a280a", outline='#9a280a')
                 else:
-                    if self.canvas.itemcget(item_id, "fill") == "#22282A":
-                        self.canvas.itemconfig(item_id, fill="#9a280a", outline='#9a280a')
-                    else:
-                        self.canvas.itemconfig(item_id, fill="white", outline='white')
+                    self.canvas.itemconfig(item_id, fill="white", outline='white')
         self.game.doStep()
         self.matrix = self.game.gameMatrix
         self.after(delay, lambda: self.traceDraw(delay))
