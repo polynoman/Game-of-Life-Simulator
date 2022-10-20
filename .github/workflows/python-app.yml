@@ -39,8 +39,13 @@ jobs:
         coverage run --source=src -m pytest
         coverage report -m
         coverage html
+        coverage xml
     - name: Upload coverage report
       uses: actions/upload-artifact@v3
       with:
         name: coverage
         path: htmlcov/
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3.1.1
+      with:
+       token: ${{ secrets.CODECOV_TOKEN }}
