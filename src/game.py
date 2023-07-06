@@ -11,7 +11,7 @@ import gui, randomGenerator
 
 class gameOfLife:
 
-    def __init__(self, matrix, intervall=0.75, trace=False, gui=True):
+    def __init__(self, matrix, intervall=0.75, trace=False, gui=True, max_steps=-1):
         self.elementCharacter = "o"
         self.voidCharacter = "-"
         self.lineBreakCharacter = "\n"
@@ -20,11 +20,13 @@ class gameOfLife:
         self.intervall = intervall
         self.trace = trace
         self.gui = gui
+        self.max_steps = max_steps
+        self.current_step = 0
 
         if gui:
             self.setupGui()
         else:
-            self.doMultipleSteps(-1)
+            self.doMultipleSteps(max_steps)
 
 
     def printMatrix(self, space = 0):
@@ -71,17 +73,16 @@ class gameOfLife:
 
 
     def doMultipleSteps(self, stepAmount):
-        i=0
-        while (i+1) != stepAmount:
+        while (self.current_step+1) != stepAmount:
             self.doStep()
             self.printMatrix()
-            i+=1
+            self.current_step+=1
             time.sleep(self.intervall)
 
 
     def setupGui(self):
-        app = gui.App(game=self)
-        app.mainloop()
+        self.app = gui.App(game=self)
+        self.app.mainloop()
 
 
 

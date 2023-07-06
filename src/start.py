@@ -25,6 +25,8 @@ if __name__ == "__main__":
     gui = True
     trace = False
 
+    max_steps = -1
+
     i = 1
     args = sys.argv
     print(args)
@@ -77,7 +79,7 @@ if __name__ == "__main__":
                 i+=1
                 threshold = float(args[i])
             except Exception:
-                print("The threshold value is incorrect or no seed specified.")
+                print("The threshold value is incorrect or not specified.")
 
         elif args[i] == "-e":
             try:
@@ -90,13 +92,20 @@ if __name__ == "__main__":
             try:
                 gui = False
             except Exception:
-                print("The example is incorrect or no example specified.")
+                print("The cli flag has an issue.")
 
         elif args[i] == "-trace":
             try:
                 trace = True
             except Exception:
-                print("The example is incorrect or no example specified.")
+                print("The trace flag has an issue.")
+
+        elif args[i] == "-steps":
+            try:
+                i+=1
+                max_steps = int(args[i])
+            except Exception:
+                print("The maximum steps value is incorrect or not specified.")
 
         i+=1
 
@@ -122,4 +131,4 @@ if __name__ == "__main__":
         rg = randomGenerator.randomGenerator(seed=seed, threshold=threshold, fieldX=dimX, fieldY=dimY)
         matrix = rg.generateMatrix()
 
-    g = game.gameOfLife(matrix, intervall=intervall, trace=trace, gui=gui)
+    g = game.gameOfLife(matrix, intervall=intervall, trace=trace, gui=gui, max_steps=max_steps)
