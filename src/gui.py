@@ -21,6 +21,8 @@ class App(tk.Tk):
         self.canvas = tk.Canvas(self, width=self.cellwidth * self.columns, height=self.cellheight * self.rows, borderwidth=0, highlightthickness=0)
         self.canvas.pack(side="left", fill="both", expand="true")
 
+        self.iconbitmap("../media/icon/gol_64.ico")
+
         frame = tk.Frame()
 
         self.grid = {}
