@@ -8,6 +8,9 @@ import time
 import copy
 import examples
 import gui, randomGenerator
+import pickle
+import calendar
+import time
 
 class gameOfLife:
 
@@ -78,6 +81,17 @@ class gameOfLife:
             self.printMatrix()
             self.current_step+=1
             time.sleep(self.intervall)
+
+    
+    def saveState(self, timestamp = True):
+        suffix = ""
+        if timestamp:
+            current_GMT = time.gmtime()
+            time_stamp = calendar.timegm(current_GMT)
+            suffix = f"_{time_stamp}"
+
+        pkl_file = open(f'gol{suffix}.state', 'wb')
+        pickle.dump(self.gameMatrix, pkl_file)
 
 
     def setupGui(self):
