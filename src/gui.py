@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import messagebox
 import random
 import game, examples, game, randomGenerator
 
@@ -50,9 +51,13 @@ class App(tk.Tk):
                     self.canvas.itemconfig(item_id, fill="#22282A", outline='#22282A')
                 else:
                     self.canvas.itemconfig(item_id, fill="white", outline='white')
-        self.game.doStep()
-        self.matrix = self.game.gameMatrix
-        self.after(delay, lambda: self.redraw(delay))
+        if (self.game.current_step != self.game.max_steps):
+            self.game.doStep()
+            self.matrix = self.game.gameMatrix
+            self.after(delay, lambda: self.redraw(delay))
+            self.game.current_step+=1
+        else:
+            self.openStepsFinishedPopup()
 
 
     def traceDraw(self, delay):
@@ -74,6 +79,10 @@ class App(tk.Tk):
         self.game.doStep()
         self.matrix = self.game.gameMatrix
         self.after(delay, lambda: self.traceDraw(delay))
+
+
+    def openStepsFinishedPopup(self):
+        messagebox.showinfo("Information","Maximum steps has been reached")
 
 
 
