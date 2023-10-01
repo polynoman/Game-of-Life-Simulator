@@ -1,5 +1,5 @@
 ## Conway's Game of Life - Simulator
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/polynoman/Game-of-Life-Simulator/Python%20application)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/polynoman/Game-of-Life-Simulator/python-app.yml?branch=master)
 ![Codecov](https://img.shields.io/codecov/c/github/polynoman/Game-of-Life-Simulator)
 [![CodeFactor](https://www.codefactor.io/repository/github/polynoman/game-of-life-simulator/badge)](https://www.codefactor.io/repository/github/polynoman/game-of-life-simulator)
 [![License: MIT](https://img.shields.io/github/license/polynoman/Game-of-Life-Simulator)](https://choosealicense.com/licenses/mit/)
