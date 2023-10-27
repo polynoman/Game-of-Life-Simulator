@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
+from pathlib import Path
 import random
 import game, examples, game, randomGenerator
 
@@ -22,7 +23,10 @@ class App(tk.Tk):
         self.canvas = tk.Canvas(self, width=self.cellwidth * self.columns, height=self.cellheight * self.rows, borderwidth=0, highlightthickness=0)
         self.canvas.pack(side="left", fill="both", expand="true")
 
-        self.iconbitmap("../media/icon/gol_64.ico")
+        project_root_path = Path(__file__).parent.parent
+        icon_path = project_root_path / "media/icon/gol_64.png"
+        icon = tk.PhotoImage(file=icon_path)
+        self.iconphoto(False, icon)
 
         frame = tk.Frame()
 
